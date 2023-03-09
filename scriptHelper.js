@@ -115,7 +115,7 @@ function formSubmission(document, list, pilot, copilot, fuelLevel, cargoMass) {
 
 async function myFetch() {
     let planetsReturned =  await fetch("https://handlers.education.launchcode.org/static/planets.json").then(function(response) {
-        console.log(response.json)
+        // console.log(response.json)
         return response.json();
     });
     return planetsReturned;
@@ -123,8 +123,7 @@ async function myFetch() {
 
 function pickPlanet(planets) {
     let randomSelect = Math.floor(Math.random() * planets.length);
-    let selected = planets[randomSelect];
-    return selected;
+    return planets[randomSelect];
 }
 
 module.exports.addDestinationInfo = addDestinationInfo;
