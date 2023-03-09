@@ -1,4 +1,4 @@
-// const { formSubmission, addDestinationInfo, pickPlanet, myFetch } = require("./scriptHelper");
+const { formSubmission, addDestinationInfo, pickPlanet, myFetch } = require("./scriptHelper");
 
 
 window.addEventListener("load", function() {
