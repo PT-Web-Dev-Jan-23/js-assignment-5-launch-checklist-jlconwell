@@ -52,18 +52,24 @@ function formSubmission(document, list, pilot, copilot, fuelLevel, cargoMass) {
     let cargoStatus = document.getElementById("cargoStatus");
     let header2 = document.getElementById("launchStatus");
     
+    
 
     if (validateInput(pilot) === "Empty" || validateInput(copilot) === "Empty" || validateInput(fuelLevel) === "Empty" || validateInput(cargoMass) === "Empty") {
+        // list.style.visibility = "hidden";
         alert("All fields required.")
     } else if (validateInput(pilot) === "Is a Number" || validateInput(copilot) === "Is a Number") {
+        // list.style.visibility = "hidden";
         alert ("Only enter letters for Pilot and/or Co-pilot");
     } else if (validateInput(fuelLevel) === "Not a Number" || validateInput(cargoMass) === "Not a Number") {
+        // list.style.visibility = "hidden";
         alert ("Only enter numbers for Fuel Level and/or Cargo Mass");
     } else {
         list.style.visibility = "visible";
         pilotStatus.innerHTML = `Pilot ${pilot} is ready for launch`
         copilotStatus.innerHTML = `Co-pilot ${copilot} is ready for launch`
     }
+
+    // list.style.visibility = "visible";
 
     if (fuelLevel < 10000 && cargoMass <= 10000) {
         // list.style.visibility = "visible";
@@ -76,6 +82,7 @@ function formSubmission(document, list, pilot, copilot, fuelLevel, cargoMass) {
     };
     
     if (fuelLevel < 10000 && cargoMass > 10000) {
+        // list.style.visibility = "visible";
         header2.innerHTML = 'Shuttle Not Ready for Launch';
         header2.style.color = 'rgb(199, 37, 78)';
         cargoStatus.innerHTML = 'Cargo mass too heavy for launch';
@@ -95,13 +102,14 @@ function formSubmission(document, list, pilot, copilot, fuelLevel, cargoMass) {
     if (fuelLevel >= 10000 && cargoMass <= 10000) {
         // pilotStatus.innerHTML = `${pilot} is Ready.`;
         // copilotStatus.innerHTML = `${copilot} is Ready.`;
-        list.style.visibility = "visible";
+        // list.style.visibility = "hidden";
         header2.style.color = 'rgb(65, 159, 106)';
         header2.innerHTML = 'Shuttle is Ready for Launch';
         cargoStatus.innerHTML = 'Cargo mass low enough for launch';
         fuelStatus.innerHTML = 'Fuel level high enough for launch';
     }
 
+    
 
 }
 
